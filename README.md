@@ -23,9 +23,14 @@
 - startGameRender() -> Initialise l'interface de jeu et appelle newGame()
 - checkValueRender() -> Indique le résultat de la comparaison après avoir appelé checkValue()
 - endGameRender() -> Initialise l'écran final de la partie
-- displayScoreRender() -> Affiche le tableau des scores 
+- displayScoreRender() -> Affiche le tableau des scores
 - searchScore()
 
+- Règles du jeu :
+  1) Vous disposerez d'un nombre défini de tentative égal à X.
+  2) La difficulté du jeu se base sur la plage de recherche du nom que vous choisissez au début d'une partie.
+  3) À la fin de la partie, votre nombre de tentatives conditionnera votre nombre de points, proportionnellement à la difficulté choisi au début de celle-ci.
+  
 # Scoreboard
 - savecode(string username, int score): [ int position, boolean isNewPosition ] -> Enregistre le score + nom du joueur, retourne la meilleure position actuelle dans le scoreboard (postion mise à jour a la suite de cette partie ou d'un précèdente et précisé la quand ce record a été fait : tableau[int position, bool newPosition])
 - resetScore() -> Remet a zéro le LocalStorage
