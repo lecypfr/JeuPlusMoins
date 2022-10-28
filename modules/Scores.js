@@ -35,8 +35,11 @@ function saveScoresInLocalStorage(scores) {
 }
 
 function getScoresFromLocalStorage() {
+  
+  
+  
   let scores_JSON = localStorage.getItem('scores');
-  if (scores_JSON=="undefined") {
+  if (scores_JSON==null || scores_JSON=="undefined") {
     return [];
   } else {
     return JSON.parse(scores_JSON);
