@@ -1,46 +1,31 @@
 # JeuPlusMoins
 
-## Différent Niveaux de développement
-
-### Niveau 1
-- Le jeu détermine un nombre aléatoire entre 1 et 99 grâce à la fonction suivante : ${RANDOM:0:2} // DONE
-- Le jeu demande à l’utilisateur un nombre entre 1 et 99. 
-- Le jeu retourne si le nombre saisi est plus petit ou plus grand que le nombre mystère
-- Temps que ce nombre n’est pas trouvé, le jeu continue de demander un nombre à l’utilisateur
-- Une fois le nombre mystère trouvé, on affiche un message à l’utilisateur pour le féliciter et le nombre de coups nécessaires à la découverte du nombre.
-
-### Niveau 2
-- Ajouter un système de high scores
-- Demander le nom du joueur qui vient de gagner
-- Enregistrer le nom des joueurs et les scores dans un fichier.
-- Afficher la position dans les high scores de la partie terminée. (Plusieurs solutions pour l'insertion dont "sed -i "3i textToInsert")
-
-### Niveau 3
-- Ajouter un Makefile avec plusieurs commandes
-- run : qui lance une partie
-- scores : qui affiche les scores dans la CLI
-- reset-scores : qui reset les scores
-- score-by : qui recherche le score d’un joueur
-
-### Niveau 4
-- Ajouter un fichier de configuration avec les infos suivantes :
-- Nombres d’essais maximums
-- Nombres maximums de scores enregistrés
-- Nombre maximum de caractères dans le nom du joueur
-
-### Niveau 5
-- Gérer un système de difficultés 
-- Sécurisez votre code en vérifiant les types d'entrées utilisateur 
-
-
 ## CLASSES
 
 - Score{ username, score }
 
 
+## VARIABLES GLOABLES
+
+- scores : array<Score>
+
+
 ## FONCTIONS
 
-- saveScore(username, score, difficulty): [ position:int, isNewPosition:boolean];
-- displayScore(): Array<Score>;
-- resetScore(): void;
-- searchScore(): Score;
+# Core
+- newGame(playerName: string, difficulty: int) -> Initialise la partie en créant un générant un nombre aléatoire $mysteryValue
+- checkValue(inputValue: int) -> Compare $mysteryValue avec inputValue
+
+# Interface
+- configGameRender() -> Demande le nom d'utilisateur et le nombre maximum (difficulté)
+- startGameRender() -> Initialise l'interface de jeu et appelle newGame()
+- checkValueRender() -> Indique le résultat de la comparaison après avoir appelé checkValue()
+- endGameRender() -> Initialise l'écran final de la partie
+- displayScoreRender() -> Appel displayScore() et affiche le tableau des scores 
+- searchScore() -> Appel getScoreByName() et affiche la réponse
+
+# Scoreboard
+- savecode(username: string, score: int): [ position: int, isNewPosition: boolean ] -> Enregistre le score + nom du joueur, retourne la meilleure position actuelle dans le scoreboard (postion mise à jour a la suite de cette partie ou d'un précèdente et précisé la quand ce record a été fait : tableau[int position, bool newPosition])
+- resetScore(): void -> Remet a zéro le LocalStorage
+- displayScore(): array<Score> -> Retourne un tableau contenant les scores
+- getScoreByName(playerName: string): Score -> A partir du nom d'un joueur (enregistré dans le tableau des parties/scores) retrouve son meilleur score
