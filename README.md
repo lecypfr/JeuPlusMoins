@@ -28,7 +28,7 @@
 
 # Scoreboard
 - savecode(username: string, score: int): [ position: int, isNewPosition: boolean ]
-  Enregistre le score + nom du joueur, retourne la meilleure position actuelle dans le scoreboard (postion mise à jour a la suite de cette partie ou d'un précèdente et précisé la quand ce record a été fait : tableau[int position, bool newPosition])
+Enregistre le score + nom du joueur, retourne la meilleure position actuelle dans le scoreboard (postion mise à jour a la suite de cette partie ou d'un précèdente et précisé la quand ce record a été fait : tableau[int position, bool newPosition])
 - resetScore() -> Remet a zéro le LocalStorage
 - displayScore() -> Retourne un tableau contenant les scores
 - getScoreByName(string playerName) -> A partir du nom d'un joueur (enregistré dans le tableau des parties/scores) retrouve son meilleur score
