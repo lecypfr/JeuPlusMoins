@@ -1,5 +1,6 @@
 import { Score } from "./Score.js";
-import { scores } from "./main.js";
+
+export var scores= [];
 
 export function saveScore( username, score){
 
