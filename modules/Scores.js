@@ -55,3 +55,7 @@ export function saveScore( username, tentatives, difficulty){
   return reponse;
 
 }
+
+export function reset(){
+  scores = []
+}
