@@ -5,11 +5,9 @@
 - Score{ username, score }
 
 
-
 ## VARIABLES GLOABLES
 
 - scores : array<Score>
-
 
 
 ## FONCTIONS
