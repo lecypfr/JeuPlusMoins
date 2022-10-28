@@ -31,3 +31,16 @@
 ### Niveau 5
 - Gérer un système de difficultés 
 - Sécurisez votre code en vérifiant les types d'entrées utilisateur 
+
+
+## CLASSES
+
+- Score{ username, score }
+
+
+## FONCTIONS
+
+- savecode(username, score): Score;
+- displayScore(): Array<Score>;
+- resetScore(): void;
+- searchScore(): Score;
