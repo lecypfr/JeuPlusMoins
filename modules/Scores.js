@@ -2,13 +2,31 @@ import { Score } from "./Score.js";
 
 export var scores= [];
 
-export function saveScore( username, score){
+function creationScore(tentatives, difficulty) {
+  let formatageDifficulty = 0;
+
+  while (difficulty>2) {
+    difficulty = difficulty/2;
+    formatageDifficulty++;
+  }
+
+  formatageDifficulty+=5;
+
+  let score = (formatageDifficulty-tentatives)*50;
+
+  return score;
+
+}
+
+export function saveScore( username, tentatives, difficulty){
+
+ let score = creationScore(tentatives, difficulty);
 
   let position = 1;
 
   scores.forEach(scoreTest => {
 
-    if (scoreTest.score <= score) {
+    if (scoreTest.score >= score) {
       position++;
     }
 
@@ -21,7 +39,7 @@ export function saveScore( username, score){
   let isNewPosition = false;
   
   if (index>=0) {
-    if (scores[index].score > score) {
+    if (scores[index].score <= score) {
       scores[index].score = score;
       isNewPosition = true;
     }
@@ -33,7 +51,6 @@ export function saveScore( username, score){
   let reponse = [];
   reponse['position'] = position;
   reponse['isNewPosition'] = isNewPosition;
-
 
   return reponse;
 
