@@ -1,7 +1,17 @@
 import { Score } from "./Score.js";
 import { scores } from "./main.js";
 
-export function savescore( username, score){
+export function saveScore( username, score){
+
+  let position = 1;
+
+  scores.forEach(scoreTest => {
+
+    if (scoreTest.score <= score) {
+      position++;
+    }
+
+  });
 
   const index = scores.findIndex(score => {
     return score.username === username;
@@ -17,5 +27,13 @@ export function savescore( username, score){
   } else {
     scores.push(new Score(username, score));
   }
-  
+
+
+  let reponse = [];
+  reponse['position'] = position;
+  reponse['isNewPosition'] = isNewPosition;
+
+
+  return reponse;
+
 }

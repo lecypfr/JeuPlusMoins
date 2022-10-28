@@ -40,7 +40,7 @@
 
 ## FONCTIONS
 
-- savecode(username, score): [ position:int, isNewPosition:boolean];
+- saveScore(username, score): [ position:int, isNewPosition:boolean];
 - displayScore(): Array<Score>;
 - resetScore(): void;
 - searchScore(): Score;
