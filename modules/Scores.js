@@ -33,7 +33,7 @@ export function saveScore( username, tentatives, difficulty){
   });
 
   const index = scores.findIndex(score => {
-    return score.username === username;
+    return score.username.toLowerCase() === username.toLowerCase();
   });
 
   let isNewPosition = false;
@@ -56,6 +56,18 @@ export function saveScore( username, tentatives, difficulty){
 
 }
 
-export function reset(){
+export function resetScores(){
   scores = []
+}
+
+export function displayScores(){
+  return scores;
+}
+
+export function getScoreByName(playerName){
+  const score = scores.find(score => {
+    return score.username.toLowerCase() === playerName.toLowerCase();
+  });
+
+  return score;
 }
