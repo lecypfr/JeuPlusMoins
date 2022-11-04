@@ -1,1 +1,2 @@
-import I1 from "./Newgame.js";
+import I1 from "./newGame.js";
+
