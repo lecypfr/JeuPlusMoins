@@ -4,15 +4,84 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JeuPlusMoins</title>
+  <link rel="stylesheet" href="./style/css/output.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.svg" />
+  <title>¯\_( ツ )_/¯</title>
 </head>
 <body>
-  <main>
-    <div id="rules"></div>
-    <div class="scoreboard">
-      <table></table>
-    </div>
+  <header>
+    <img src="./img/logo.svg" alt="">
+  </header>
+  <main id="container">
+
+    <!-- Default -->
+
+    <!-- <section id="presentation">
+      <h1>TROUVE LE NOMBRE MYSTÈRE !</h1>
+      <p>Essaye de trouver le nombre mystère défini de manière secrète par l'ordinateur. Pour cela, profite des multiples tentatives à ta disposition ainsi que des indices venant après chacune d'entre-elles pour t'en rapprocher et potentiellement le découvrir. Le jeu te parait trop simple ? Aucun problème, règle la difficulté en début de partie et met toi au défi !</p>
+    </section>
+    <section id="infos">
+      <div>
+        <img src="./img/try.svg" alt="">
+        <p>Maximum de 7 tentatives par partie</p>
+      </div>
+      <div>
+        <img src="./img/settings.svg" alt="">
+        <p>Difficulté réglable, se basant sur la plage de définition du nombre mystère</p>
+      </div>
+      <div>
+        <img src="./img/score.svg" alt="">
+        <p>Score calculé propotionnellement à la difficulté, ainsi qu'a votre nombre de tentatives</p>
+      </div>
+    </section>
+    <a id="play_btn">Jouer</a> -->
+
+    <!-- Settings screen -->
+    
+    <!-- <section id="settings">
+      <h1>Paramètres</h1>
+      <div id="settings_box">
+        <div>
+          <label>Pseudo</label>
+          <input type="text" id="name_input" required>
+        </div>
+
+        <div id="range">
+          <label>Intervalle</label>
+          <input type="number" class="range_input" id="input_min" value="0" placeholder="Min" controls="hidden" min="0" max="7000" required>
+          <div class="separator">-</div>
+          <input type="number" class="range_input" id="input_max" value="500" placeholder="Max" min="500" max="7500"required>
+        </div>
+
+        <div id="slider">
+          <div id="progress"></div>
+        </div>
+
+      </div>
+    </section>
+    <a id="start_btn">Commencer</a> -->
+
+    <!-- Game screen -->
+
+    <section id="game">
+      <h1>QUEL NOMBRE PROPOSE-TU ?</h1>
+      <div id="attempts">
+        <p>2</p>
+        <p>/</p>
+        <p>7</p>
+      </div>
+      <div id="game_infos">
+        <p>780</p>
+        <p>></p>
+        <input type="number" id="value_input" placeholder="42" required>
+        <p>></p>
+        <p>2530</p>
+      </div>
+    </section>
+    <a id="check_btn">Vérifier</a>
+
   </main>
+  <footer></footer>
   <script src="modules/main.js" type="module"></script>
 </body>
 </html>
