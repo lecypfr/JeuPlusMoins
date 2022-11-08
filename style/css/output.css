@@ -51,6 +51,16 @@ body {
   font-family: poppins, sans-serif;
   padding: 0px 75px;
 }
+body h1 {
+  color: #ccff33;
+  font-size: 32px;
+  font-weight: 800;
+}
+body h2 {
+  color: #f5f5f5;
+  font-size: 24px;
+  font-weight: 600;
+}
 body p {
   line-height: 22px;
 }
@@ -74,10 +84,9 @@ body a {
   font-weight: 800;
 }
 body a:hover {
-  background-color: #151515;
-  border: 2px solid #f5f5f5;
+  background-color: #202020;
   color: #ccff33;
-  transition: 0.02s ease-in-out;
+  transition: 0.075s ease-in-out;
 }
 
 header {
@@ -100,9 +109,6 @@ main {
   color: #f5f5f5;
 }
 #presentation h1 {
-  color: #ccff33;
-  font-size: 32px;
-  font-weight: 800;
   margin-bottom: 16px;
 }
 
@@ -153,14 +159,8 @@ main {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  gap: 32px 0px;
   color: #f5f5f5;
-}
-#settings h1 {
-  align-self: flex-start;
-  color: #ccff33;
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 16px;
 }
 #settings #settings_box {
   display: flex;
@@ -219,12 +219,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
-}
-#game h1 {
-  color: #ccff33;
-  font-size: 32px;
-  font-weight: 800;
+  gap: 32px 0px;
 }
 #game #attempts {
   display: flex;
@@ -247,6 +242,66 @@ main {
   padding: 14px 14px;
   color: #f5f5f5;
   background-color: #202020;
+}
+#game #clue {
+  color: #ccff33;
+  position: absolute;
+  top: 43%;
+}
+
+#win {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 38px 0px;
+  color: #f5f5f5;
+}
+#win .stats_box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 38px 0px;
+  align-items: center;
+  max-width: 725px;
+  padding: 42px 42px;
+  background-color: rgb(21, 21, 21);
+  box-shadow: rgba(0, 0, 0, 0.525) 0px 2px 12px;
+  border-radius: 10px;
+}
+#win .stats_box #stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px 90px;
+}
+#win .stats_box #stats #stat_attempts, #win .stats_box #stats #stat_score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px 0px;
+}
+#win .stats_box #stats #stat_attempts .stat_h3, #win .stats_box #stats #stat_score .stat_h3 {
+  display: flex;
+  gap: 0px 12px;
+  font-size: 18px;
+  color: #f5f5f5;
+}
+#win .stats_box #stats #stat_attempts .stat_h3 p:first-child, #win .stats_box #stats #stat_score .stat_h3 p:first-child {
+  color: #ccff33;
+}
+
+#bottom_btn {
+  display: flex;
+  gap: 0px 28px;
+}
+
+#defeat {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 38px 0px;
+  color: #f5f5f5;
 }
 
 /*# sourceMappingURL=output.css.map */

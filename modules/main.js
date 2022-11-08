@@ -1,3 +1,5 @@
-import { savescore } from "./savescore.js";
+import {init} from "./app.js"
 
-export var scores= [];
+window.addEventListener('DOMContentLoaded', () => {
+    init()
+})
