@@ -304,4 +304,8 @@ main {
   color: #f5f5f5;
 }
 
+#error_msg {
+  color: #dd0303;
+}
+
 /*# sourceMappingURL=output.css.map */
