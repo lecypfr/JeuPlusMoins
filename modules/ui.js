@@ -34,10 +34,10 @@ export function startGameRender(){
 
     if(playerName.value === ""){
         errorMessage.innerText = "Veuillez renseigner un pseudo"
-    } else if(intervalBegin.value < 0){
-        errorMessage.innerText = "La valeur minimale ne doit pas être en dessous de 0"
-    } else if(intervalEnd.value > 7500){
-        errorMessage.innerText = "La valeur maximale ne doit pas dépasser 7500"
+    } else if(intervalBegin.value < 0 || intervalBegin.value === ""){
+        errorMessage.innerText = "Veuillez rentrer une valeur minimale, supérieur ou égale à 0"
+    } else if(intervalEnd.value > 7500 || intervalEnd.value === ""){
+        errorMessage.innerText = "Veuillez rentrer une valeur maximale, inférieur ou égale à 7500"
         console.log("Erreur 7500")
     } else{
         configData = {
@@ -69,11 +69,8 @@ export function startGameRender(){
             </div>
         </section>
         <a id="check_btn">Vérifier</a>
-        <p if="check_msg"></p>`
+        <p id="check_msg"></p>`
     }
-
-
-    console.log(configData)
 }
 
 export function checkValueRender(){
@@ -81,6 +78,9 @@ export function checkValueRender(){
     const checkMessage = document.querySelector('#check_msg')
 
     if(valueInput.value === ""){
+        console.log("check")
         checkMessage.innerText = "Il faut que tu propose un nombre avant de vérifier"
+    } else{
+        checkMessage.innerText = ""
     }
 }

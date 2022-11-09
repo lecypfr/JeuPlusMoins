@@ -8,7 +8,7 @@ export function savescore( username, score){
   });
   
   if (index>=0) {
-    if (scores[index].score > score) {
+    if (scores[index].score > score){
       scores[index].score = score;
     }
   } else {
