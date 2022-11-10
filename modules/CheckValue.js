@@ -1,21 +1,26 @@
-function checkValue (newGame,inputValue){
+let checkMessage = document.querySelector('#check_msg')
 
-    newGame.nbTentatives = newGame.nbTentatives + 1;
-    if(inputValue === newGame.mysteryValue){
-        newGame.resultatTentative[newGame.nbTentatives] = "="
-        return saveScore(newGame.playerName , newGame.nbTentatives , newGame.difficultyValue)
+export function checkValue (Game,inputValue){
+    let res = ""
 
-    }else{
-        if(inputValue > newGame.mysteryValue){
-            return newGame.resultatTentative[newGame.nbTentatives] = "+"
-
-        }
-        if(inputValue < newGame.mysteryValue){
-            return newGame.resultatTentative[newGame.nbTentatives] = "-"
-        }
+    if(inputValue === Game.mysteryValue){
+        console.log("dedans BINGO")
+        res = "Bingo ! En plein dans le mille"
+        // écran de win
+        // return saveScore(Game.playerName , Game.attemptCount , Game.difficultyRange)
+    } else if(inputValue > Game.mysteryValue){
+        console.log("dedans1")
+        res = "Plus bas (<)"
+            // return newGame.resultatTentative[newGame.nbTentatives] = "+"
+    } else if(inputValue < Game.mysteryValue){
+        console.log("dedans1")
+        res = "Plus haut (>)"
+        // return newGame.resultatTentative[newGame.nbTentatives] = "-"
+    } else{
+        // écran de loose
     }
-    
-    
+
+    return res
 }
 
 

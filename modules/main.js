@@ -1,5 +1,5 @@
 import {init} from "./app.js"
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     init()
 })

@@ -1,11 +1,7 @@
 @import './reset.scss';
 
-// Acumin Pro
-@import url("https://use.typekit.net/blb1wst.css");
-
 //Poppins
 @import url("https://use.typekit.net/blb1wst.css");
-
 
 body{
     background-color: #151515;
@@ -306,9 +302,5 @@ main{
 }
 
 #error_msg{
-    color: #dd0303;
-}
-
-#check_msg{
     color: #dd0303;
 }

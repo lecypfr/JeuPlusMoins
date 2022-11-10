@@ -1,5 +1,4 @@
 @import url("https://use.typekit.net/blb1wst.css");
-@import url("https://use.typekit.net/blb1wst.css");
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -305,10 +304,6 @@ main {
 }
 
 #error_msg {
-  color: #dd0303;
-}
-
-#check_msg {
   color: #dd0303;
 }
 

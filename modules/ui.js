@@ -1,3 +1,7 @@
+import {Game} from "./Game.js"
+import { checkValue } from "./checkValue.js"
+
+
 const container = document.querySelector('#container')
 
 export function configGameRender(){
@@ -40,14 +44,14 @@ export function startGameRender(){
         errorMessage.innerText = "Veuillez rentrer une valeur maximale, inférieur ou égale à 7500"
         console.log("Erreur 7500")
     } else{
-        configData = {
-            playerName: playerName.value,
-            intervalBegin: intervalBegin.value,
-            intervalEnd: intervalEnd.value
-        }
+
+        let game = new Game(playerName.value, {
+            minValue: intervalBegin.value,
+            maxValue: intervalEnd.value
+        })
 
         try{
-            sessionStorage.setItem("configData", JSON.stringify(configData))
+            sessionStorage.setItem("gameData", JSON.stringify(game))
         } catch (e){
             console.log(e)
         }
@@ -56,16 +60,16 @@ export function startGameRender(){
         <section id="game">
             <h1>QUEL NOMBRE PROPOSE-TU ?</h1>
             <div id="attempts">
-                <p>2</p>
+                <p>${game.attemptCount}</p>
                 <p>/</p>
-                <p>7</p>
+                <p>${game.maxAttempt}</p>
             </div>
             <div id="game_infos">
-                <p>${configData.intervalBegin}</p>
+                <p>${game.difficultyRange.minValue}</p>
                 <p>></p>
                 <input type="number" id="value_input" placeholder="42" required>
                 <p>></p>
-                <p>${configData.intervalEnd}</p>
+                <p>${game.difficultyRange.maxValue}</p>
             </div>
         </section>
         <a id="check_btn">Vérifier</a>
@@ -76,11 +80,43 @@ export function startGameRender(){
 export function checkValueRender(){
     const valueInput = document.querySelector('#value_input')
     const checkMessage = document.querySelector('#check_msg')
+    const attempts = document.querySelector('#attempts p')
 
-    if(valueInput.value === ""){
-        console.log("check")
-        checkMessage.innerText = "Il faut que tu propose un nombre avant de vérifier"
-    } else{
+    let sessionGameData = {}
+
+    if(sessionStorage.getItem("gameData")){
+        sessionGameData = JSON.parse(sessionStorage.getItem("gameData"))
+    }
+    console.log(sessionGameData)
+
+    if(valueInput.value != "" && valueInput.value >= sessionGameData.difficultyRange.minValue && valueInput.value <= sessionGameData.difficultyRange.maxValue){
         checkMessage.innerText = ""
+        console.log("Ca test le nombre")
+        checkMessage.innerText = checkValue(sessionGameData,parseInt(valueInput.value))
+        checkMessage.style.color = '#ccff33'
+    } else if(valueInput.value === ""){
+        checkMessage.style.color = '#dd0303'
+        checkMessage.innerText = "Veuillez proposer un nombre avant de vérifier"
+    } else if(valueInput.value < sessionGameData.difficultyRange.minValue){
+        checkMessage.style.color = '#dd0303'
+        checkMessage.innerText = `Veuillez proposer un nombre supérieur ou égal à ${sessionGameData.difficultyRange.minValue}`
+    } else if(valueInput.value > sessionGameData.difficultyRange.maxValue){
+        checkMessage.style.color = '#dd0303'
+        checkMessage.innerText = `Veuillez proposer un nombre inférieur ou égal à ${sessionGameData.difficultyRange.maxValue}`
     }
 }
+
+
+
+
+// configData = {
+//     playerName: playerName.value,
+//     intervalBegin: intervalBegin.value,
+//     intervalEnd: intervalEnd.value
+// }
+
+// try{
+//     sessionStorage.setItem("configData", JSON.stringify(configData))
+// } catch (e){
+//     console.log(e)
+// }
