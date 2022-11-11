@@ -1,5 +1,5 @@
 import { Game, checkValue, updateAttemptsRender } from "./Game.js"
-import { creationScore, displayScores } from "./scores.js"
+import { creationScore, displayScores } from "./Scores.js"
 
 export let game
 
