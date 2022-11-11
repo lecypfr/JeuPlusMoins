@@ -1,5 +1,5 @@
 import { game, createWinPage, createLoosePage } from "./ui.js"
-import { saveScore } from "./scores.js"
+import { saveScore } from "./Scores.js"
 
 export class Game {
     constructor(playerName, difficultyRange){
