@@ -1,32 +1,19 @@
 import { Score } from "./Score.js";
 
-function creationScore(tentatives, difficulty) {
-  let formatageDifficulty = 0;
+export function creationScore(tentatives, difficulty) {
+  let formatageDifficulty = 1;
 
   while (difficulty>2) {
     difficulty = difficulty/2;
-    formatageDifficulty++;
+    formatageDifficulty *= 2;
   }
 
   formatageDifficulty+=5;
 
-  let score = (formatageDifficulty-tentatives)*50;
+  let score = Math.floor((formatageDifficulty/tentatives)*50);
 
   return score;
 
-}
-
-function getPositionOfScore(score, scores){
-  let position = 1;
-  scores.forEach(scoreTest => {
-
-    if (scoreTest.score >= score) {
-      position++;
-    }
-
-  });
-
-  return position;
 }
 
 function saveScoresInLocalStorage(scores) {
@@ -35,11 +22,8 @@ function saveScoresInLocalStorage(scores) {
 }
 
 function getScoresFromLocalStorage() {
-  
-  
-  
   let scores_JSON = localStorage.getItem('scores');
-  if (scores_JSON==null || scores_JSON=="undefined") {
+  if (scores_JSON == null || scores_JSON == "undefined") {
     return [];
   } else {
     return JSON.parse(scores_JSON);
@@ -47,12 +31,8 @@ function getScoresFromLocalStorage() {
 }
 
 export function saveScore( username, tentatives, difficulty){
-
   let scores = getScoresFromLocalStorage();
-
   let score = creationScore(tentatives, difficulty);
-
-  let position = getPositionOfScore(score, scores);
 
 
   const index = scores.findIndex(score => {
@@ -77,13 +57,6 @@ export function saveScore( username, tentatives, difficulty){
   }
 
   saveScoresInLocalStorage(scores);
-
-  let reponse = [];
-  reponse['position'] = position;
-  reponse['isNewPosition'] = isNewPosition;
-
-  return reponse;
-
 }
 
 export function resetScores(){
@@ -91,15 +64,13 @@ export function resetScores(){
 }
 
 export function displayScores(){
-  let scores = getScoresFromLocalStorage();
+  let scores = sortScores(getScoresFromLocalStorage());
   return scores;
 }
 
-export function getScoreByName(playerName){
-  let scores = getScoresFromLocalStorage();
-  const score = scores.find(score => {
-    return score.username.toLowerCase() === playerName.toLowerCase();
+function sortScores(scores){
+  scores.sort(function(a, b) {
+    return b.score - a.score;
   });
-
-  return score;
+  return scores;
 }

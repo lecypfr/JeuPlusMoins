@@ -60,7 +60,7 @@ body h2 {
   font-size: 24px;
   font-weight: 600;
 }
-body p {
+body p, body th, body td {
   line-height: 22px;
 }
 body input:focus {
@@ -90,10 +90,11 @@ body a:hover {
 
 header {
   text-align: center;
+  padding: 42px 0px;
 }
 header img {
   width: 170px;
-  padding: 42px 0px;
+  cursor: pointer;
 }
 
 main {
@@ -138,6 +139,48 @@ main {
 #infos div:hover {
   transition: 0.2s ease-in-out;
   transform: scale(1.05);
+}
+
+#scores h1 {
+  margin-bottom: 16px;
+}
+#scores table {
+  min-width: 600px;
+  border-radius: 20px;
+  background-color: rgb(21, 21, 21);
+  box-shadow: rgba(0, 0, 0, 0.525) 0px 2px 12px;
+}
+#scores table #tab_head th {
+  background-color: #ccff33;
+  color: #151515;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 800;
+}
+#scores table #tab_head th:first-child {
+  border-top-left-radius: 10px;
+}
+#scores table #tab_head th:last-child {
+  border-top-right-radius: 10px;
+}
+#scores table td {
+  padding: 12px 15px;
+  color: #f5f5f5;
+}
+#scores table tbody tr {
+  border-bottom: 1px solid #ccff33;
+}
+#scores table tbody tr#rankPlayer {
+  background-color: #ccff33;
+}
+#scores table tbody tr#rankPlayer td {
+  color: #151515;
+}
+#scores table tbody tr:nth-of-type(even) {
+  background-color: #202020;
+}
+#scores table tbody tr:last-of-type {
+  border-bottom: 2px solid #ccff33;
 }
 
 ::-webkit-scrollbar {
