@@ -1,0 +1,353 @@
+@import url("https://use.typekit.net/blb1wst.css");
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  border-radius: 0;
+}
+
+body {
+  background-color: #151515;
+  font-family: poppins, sans-serif;
+  padding: 0px 75px;
+}
+body h1 {
+  color: #ccff33;
+  font-size: 32px;
+  font-weight: 800;
+}
+body h2 {
+  color: #f5f5f5;
+  font-size: 24px;
+  font-weight: 600;
+}
+body p, body th, body td {
+  line-height: 22px;
+}
+body input:focus {
+  outline: 2px solid #ccff33;
+  transition: 0.04s ease-in-out;
+}
+body input[type=number]::-webkit-inner-spin-button, body input[type=number]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+body section {
+  max-width: 1100px;
+}
+body a {
+  color: #151515;
+  background-color: #ccff33;
+  padding: 14px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 800;
+}
+body a:hover {
+  background-color: #202020;
+  color: #ccff33;
+  transition: 0.075s ease-in-out;
+}
+
+header {
+  text-align: center;
+  padding: 42px 0px;
+}
+header img {
+  width: 170px;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 75px;
+  padding: 75px 0px;
+}
+
+#presentation {
+  color: #f5f5f5;
+}
+#presentation h1 {
+  margin-bottom: 16px;
+}
+
+#infos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+#infos div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  width: 250px;
+  height: 250px;
+  background-color: rgb(21, 21, 21);
+  box-shadow: rgba(0, 0, 0, 0.525) 0px 2px 12px;
+  border-radius: 10px;
+}
+#infos div img {
+  width: 50px;
+  margin-bottom: 25px;
+}
+#infos div p {
+  text-align: center;
+  color: #f5f5f5;
+}
+#infos div:hover {
+  transition: 0.2s ease-in-out;
+  transform: scale(1.05);
+}
+
+#scores h1 {
+  margin-bottom: 16px;
+}
+#scores table {
+  min-width: 600px;
+  border-radius: 20px;
+  background-color: rgb(21, 21, 21);
+  box-shadow: rgba(0, 0, 0, 0.525) 0px 2px 12px;
+}
+#scores table #tab_head th {
+  background-color: #ccff33;
+  color: #151515;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 800;
+}
+#scores table #tab_head th:first-child {
+  border-top-left-radius: 10px;
+}
+#scores table #tab_head th:last-child {
+  border-top-right-radius: 10px;
+}
+#scores table td {
+  padding: 12px 15px;
+  color: #f5f5f5;
+}
+#scores table tbody tr {
+  border-bottom: 1px solid #ccff33;
+}
+#scores table tbody tr#rankPlayer {
+  background-color: #ccff33;
+}
+#scores table tbody tr#rankPlayer td {
+  color: #151515;
+}
+#scores table tbody tr:nth-of-type(even) {
+  background-color: #202020;
+}
+#scores table tbody tr:last-of-type {
+  border-bottom: 2px solid #ccff33;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(21, 21, 21, 0.5019607843);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccff33;
+  border-radius: 30px;
+}
+
+#settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px 0px;
+  color: #f5f5f5;
+}
+#settings #settings_box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 30px 0px;
+  align-items: center;
+  max-width: 725px;
+  padding: 42px 42px;
+  background-color: rgb(21, 21, 21);
+  box-shadow: rgba(0, 0, 0, 0.525) 0px 2px 12px;
+  border-radius: 10px;
+}
+#settings #settings_box div {
+  display: flex;
+  align-items: baseline;
+  gap: 0px 16px;
+}
+#settings #settings_box div #name_input {
+  max-width: 275px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 0;
+  padding: 14px 14px;
+  color: #f5f5f5;
+  background-color: #202020;
+}
+#settings #settings_box .range_input {
+  width: 40px;
+  width: fit-content;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 0;
+  padding: 14px 14px;
+  color: #f5f5f5;
+  background-color: #202020;
+}
+#settings #settings_box #slider {
+  height: 6px;
+  width: 100%;
+  background-color: #202020;
+  border-radius: 3px;
+  position: relative;
+}
+#settings #settings_box #slider #progress {
+  position: absolute;
+  max-width: 100%;
+  right: 25%;
+  left: 25%;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #ccff33;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px 0px;
+}
+#game #attempts {
+  display: flex;
+  gap: 0px 16px;
+  color: #f5f5f5;
+}
+#game #attempts p:first-child {
+  color: #ccff33;
+}
+#game #game_infos {
+  display: flex;
+  align-items: center;
+  gap: 0px 16px;
+  color: #f5f5f5;
+}
+#game #game_infos #value_input {
+  font-size: 16px;
+  border-radius: 5px;
+  border: 0;
+  padding: 14px 14px;
+  color: #f5f5f5;
+  background-color: #202020;
+}
+#game #clue {
+  color: #ccff33;
+  position: absolute;
+  top: 43%;
+}
+
+#win {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 38px 0px;
+  color: #f5f5f5;
+}
+#win .stats_box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 38px 0px;
+  align-items: center;
+  max-width: 725px;
+  padding: 42px 42px;
+  background-color: rgb(21, 21, 21);
+  box-shadow: rgba(0, 0, 0, 0.525) 0px 2px 12px;
+  border-radius: 10px;
+}
+#win .stats_box #stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px 90px;
+}
+#win .stats_box #stats #stat_attempts, #win .stats_box #stats #stat_score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px 0px;
+}
+#win .stats_box #stats #stat_attempts .stat_h3, #win .stats_box #stats #stat_score .stat_h3 {
+  display: flex;
+  gap: 0px 12px;
+  font-size: 18px;
+  color: #f5f5f5;
+}
+#win .stats_box #stats #stat_attempts .stat_h3 p:first-child, #win .stats_box #stats #stat_score .stat_h3 p:first-child {
+  color: #ccff33;
+}
+
+#bottom_btn {
+  display: flex;
+  gap: 0px 28px;
+}
+
+#defeat {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 38px 0px;
+  color: #f5f5f5;
+}
+
+#error_msg {
+  color: #dd0303;
+}
+
+/*# sourceMappingURL=output.css.map */

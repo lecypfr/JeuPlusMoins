@@ -1,3 +1,11 @@
-import { savescore } from "./savescore.js";
+import {init} from "./app.js"
 
-export var scores= [];
+const logoApp = document.querySelector("header img")
+
+window.addEventListener('load', () => {
+    init()
+
+    logoApp.addEventListener('click', () => {
+        location.reload()
+    })
+})
